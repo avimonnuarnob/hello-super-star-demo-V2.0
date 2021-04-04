@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { Box, Card } from './Selected-Category';
+
 const ViewStars = ({ history }) => {
   const super_stars = [
     {
@@ -33,25 +35,41 @@ const ViewStars = ({ history }) => {
         </div>
       </section>
 
-      <div className="album py-2 bg-light">
+      <div className="album py-2">
         <div className="container">
           <div className="row">
-            {super_stars.map((star) => (
-              <div className="col-md-4">
-                <div className="card mb-4 box-shadow">
-                  <img
-                    className="card-img-top"
-                    src={`/images/category-images/sports-category-stars/${star.photo}`}
-                    alt="Card image cap"
-                  />
-                  <div className="card-body text-center">
-                    <h3 className="card-title">
-                      <Link to="/time-line/saakib">{star.name}</Link>
-                    </h3>
+            <Box>
+              {super_stars.map((star) => (
+                // <div className="col-md-4">
+                //   <div className="card mb-4 box-shadow">
+                //     <img
+                //       className="card-img-top"
+                //       src={`/images/category-images/sports-category-stars/${star.photo}`}
+                //       alt="Card image cap"
+                //     />
+                //     <div className="card-body text-center">
+                //       <h3 className="card-title">
+                //         <Link to="/time-line/saakib">{star.name}</Link>
+                //       </h3>
+                //     </div>
+                //   </div>
+                // </div>
+                <Card>
+                  <div class="imgBx">
+                    <img
+                      src={`/images/category-images/sports-category-stars/${star.photo}`}
+                      alt="images"
+                    />
                   </div>
-                </div>
-              </div>
-            ))}
+                  <div class="details">
+                    <h2>
+                      {' '}
+                      <Link to="/time-line/saakib">{star.name}</Link>
+                    </h2>
+                  </div>
+                </Card>
+              ))}
+            </Box>
           </div>
         </div>
       </div>

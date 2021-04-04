@@ -1,99 +1,164 @@
 import React from 'react';
 import AuthPageLeftPanel from './Auth-Page-Left-Panel';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 const Register = () => {
+  let history = useHistory();
   return (
-    <>
-      <div className="theme-layout">
-        <div className="container-fluid pdng0">
-          <div className="row merged">
-            <AuthPageLeftPanel />
-            <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-              <div className="login-reg-bg">
-                {/*Login Form*/}
-                <div className="log-reg-area sign">
-                  <h2 className="log-title">Register</h2>
-                  <p>
-                    Don’t use Winku Yet?{' '}
-                    <a href="#" title="">
-                      Take the tour
-                    </a>{' '}
-                    or{' '}
-                    <a href="#" title="">
-                      Join now
-                    </a>
-                  </p>
-                  <form method="post">
-                    <div className="form-group">
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">
-                        First & Last Name
-                      </label>
-                      <i className="mtrl-select" />
+    <div className="theme-layout">
+      <div className="container-fluid pdng0">
+        <div className="row merged">
+          <AuthPageLeftPanel />
+          <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex justify-content-center align-items-center">
+            <div class="login-box">
+              <div class="login-snip">
+                {' '}
+                <input
+                  id="tab-1"
+                  type="radio"
+                  name="tab"
+                  class="sign-in"
+                  checked
+                />
+                <label for="tab-1" class="tab">
+                  Login
+                </label>{' '}
+                <input id="tab-2" type="radio" name="tab" class="sign-up" />
+                <label for="tab-2" class="tab">
+                  Sign Up
+                </label>
+                <div class="login-space">
+                  <div class="login">
+                    <div class="group">
+                      {' '}
+                      <label for="user" class="label">
+                        Username
+                      </label>{' '}
+                      <input
+                        id="user"
+                        type="text"
+                        class="input"
+                        placeholder="Enter your username"
+                      />{' '}
                     </div>
-
-                    <div className="form-group">
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">
-                        User Name
-                      </label>
-                      <i className="mtrl-select" />
-                    </div>
-
-                    <div className="form-group">
-                      <input type="password" required="required" />
-                      <label className="control-label" htmlFor="input">
+                    <div class="group">
+                      {' '}
+                      <label for="pass" class="label">
                         Password
-                      </label>
-                      <i className="mtrl-select" />
+                      </label>{' '}
+                      <input
+                        id="pass"
+                        type="password"
+                        class="input"
+                        data-type="password"
+                        placeholder="Enter your password"
+                      />{' '}
                     </div>
-
-                    <div className="form-radio">
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" checked="checked" />
-                          <i className="check-box" />
-                          Male
-                        </label>
-                      </div>
-                      <div className="radio">
-                        <label>
-                          <input type="radio" name="radio" />
-                          <i className="check-box" />
-                          Female
-                        </label>
-                      </div>
+                    <div class="group">
+                      {' '}
+                      <input
+                        id="check"
+                        type="checkbox"
+                        class="check"
+                        checked
+                      />{' '}
+                      <label for="check">
+                        <span class="icon"></span> Keep me Signed in
+                      </label>{' '}
                     </div>
-
-                    <div className="form-group">
-                      <input type="text" required="required" />
-                      <label className="control-label" htmlFor="input">
-                        Enter Email
-                      </label>
-                      <i className="mtrl-select" />
+                    <div class="group">
+                      {' '}
+                      {/* <input
+                        type="submit"
+                        class="button"
+                        value="Sign In"
+                      />*/}
+                      <button
+                        className="button"
+                        type="submit"
+                        onClick={() => history.push('/choose-category')}
+                      >
+                        <span>Login</span>
+                      </button>{' '}
                     </div>
-
-                    <div className="submit-btns">
-                      <button className="mtr-btn signup" type="button">
-                        <span>Register</span>
-                      </button>
+                    <div class="hr"></div>
+                    <div class="foot">
+                      {' '}
+                      <a href="#">Forgot Password?</a>{' '}
                     </div>
-                  </form>
-
-                  <p className="mt-2">
-                    Already have any account?{'  '}
-                    <Link to="/" title="">
-                      Login
-                    </Link>
-                  </p>
+                  </div>
+                  <div class="sign-up-form">
+                    <div class="group">
+                      {' '}
+                      <label for="user" class="label">
+                        Username
+                      </label>{' '}
+                      <input
+                        id="user"
+                        type="text"
+                        class="input"
+                        placeholder="Create your Username"
+                      />{' '}
+                    </div>
+                    <div class="group">
+                      {' '}
+                      <label for="pass" class="label">
+                        Password
+                      </label>{' '}
+                      <input
+                        id="pass"
+                        type="password"
+                        class="input"
+                        data-type="password"
+                        placeholder="Create your password"
+                      />{' '}
+                    </div>
+                    <div class="group">
+                      {' '}
+                      <label for="pass" class="label">
+                        Repeat Password
+                      </label>{' '}
+                      <input
+                        id="pass"
+                        type="password"
+                        class="input"
+                        data-type="password"
+                        placeholder="Repeat your password"
+                      />{' '}
+                    </div>
+                    <div class="group">
+                      {' '}
+                      <label for="pass" class="label">
+                        Email Address
+                      </label>{' '}
+                      <input
+                        id="pass"
+                        type="text"
+                        class="input"
+                        placeholder="Enter your email address"
+                      />{' '}
+                    </div>
+                    <div class="group">
+                      {' '}
+                      <input
+                        type="submit"
+                        class="button"
+                        value="Sign Up"
+                      />{' '}
+                    </div>
+                    <div class="hr"></div>
+                    <div class="foot">
+                      {' '}
+                      <label for="tab-1">Already Member?</label>{' '}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

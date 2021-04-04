@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Card, Box } from './Selected-Category';
 
 const DesireCategory = ({ history }) => {
   const choices = localStorage.getItem('choices').split(',');
@@ -62,14 +63,14 @@ const DesireCategory = ({ history }) => {
         </div>
       </section>
 
-      <div className="album py-2 bg-light">
+      <div className="album py-2">
         <div className="container">
-          <div className="row">
+          <Box>
             {categories
               .filter((el) => choices.includes(el.category_name))
               .map((category) => (
-                <div className="col-md-4">
-                  <div className="card mb-4 box-shadow">
+                <>
+                  {/* <div className="card mb-4 box-shadow">
                     <img
                       className="card-img-top"
                       src={`images/category-images/${category.category_photo}`}
@@ -82,16 +83,31 @@ const DesireCategory = ({ history }) => {
                         </Link>
                       </h3>
                     </div>
-                  </div>
-                </div>
+                  </div> */}
+                  <Card>
+                    <div class="imgBx">
+                      <img
+                        src={`images/category-images/${category.category_photo}`}
+                        alt="images"
+                      />
+                    </div>
+                    <div class="details">
+                      <h2>
+                        <Link to="/selected-category">
+                          {category.category_name}
+                        </Link>
+                      </h2>
+                    </div>
+                  </Card>
+                </>
               ))}
-          </div>
+          </Box>
         </div>
       </div>
 
       <div className="container">
-        <div className="row">
-          <div className="col-12 mb-5" style={{ marginLeft: '45%' }}>
+        <div className="row justify-content-center">
+          <div className="col-4 mb-5 d-flex justify-content-center">
             <button
               className="btn btn-lg btn-outline-dark"
               onClick={history.goBack}
